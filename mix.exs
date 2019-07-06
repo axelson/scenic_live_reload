@@ -27,4 +27,5 @@ defmodule ScenicLiveReload.MixProject do
 
   defp exsync_dep(:hex), do: {:exsync, "~> 0.2"}
   defp exsync_dep(:github), do: {:exsync, github: "falood/exsync"}
+  defp exsync_dep(:path), do: {:exsync, path: "../forks/exsync"}
 end
