@@ -44,6 +44,10 @@ case Mix.env() do
 end
 ```
 
+# Development
+
+NOTE: This currently relies on a private scenic api to get the root scene which may change in future Scenic releases
+
 TODO:
 - [x] Write nicer description
 - [x] Request new exsync release
