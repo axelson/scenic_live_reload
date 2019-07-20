@@ -4,9 +4,12 @@ A live reloader for Scenic. Once configured, when you edit a file the current
 root scene will be killed, when it is restarted it will use any new code
 currently in the running beam instance.
 
-Uses [exsync](https://github.com/falood/exsync) to watch the file system. Then
-when you edit a file with your editor, exsync will trigger a recompile and
-reload of the affected beam files.
+How it works:
+* Uses [exsync](https://github.com/falood/exsync) to watch the file system 
+* When you edit a file with your editor, exsync recompiles and reloads that beam file
+* `exsync` notifies `scenic_live_reload` that files were reloaded
+* `scenic_live_reload` kills the currently displayed root scene
+* The OTP Supervisor for that scene restarts the scene with the updated code
 
 # Demo
 
