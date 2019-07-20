@@ -21,11 +21,11 @@ defmodule ScenicLiveReload.MixProject do
   defp deps do
     [
       {:scenic, "~> 0.10"},
-      exsync_dep(:github)
+      dep(:exsync, :github)
     ]
   end
 
-  defp exsync_dep(:hex), do: {:exsync, "~> 0.2"}
-  defp exsync_dep(:github), do: {:exsync, github: "falood/exsync"}
-  defp exsync_dep(:path), do: {:exsync, path: "../forks/exsync"}
+  defp dep(:exsync, :hex), do: {:exsync, "~> 0.2"}
+  defp dep(:exsync, :github), do: {:exsync, github: "axelson/exsync"}
+  defp dep(:exsync, :path), do: {:exsync, path: "../forks/exsync"}
 end
