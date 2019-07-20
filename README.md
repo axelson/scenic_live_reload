@@ -5,7 +5,7 @@ root scene will be killed, when it is restarted it will use any new code
 currently in the running beam instance.
 
 How it works:
-* Uses [exsync](https://github.com/falood/exsync) to watch the file system 
+* Uses [exsync](https://github.com/axelson/exsync) to watch the file system 
 * When you edit a file with your editor, exsync recompiles and reloads that beam file
 * `exsync` notifies `scenic_live_reload` that files were reloaded
 * `scenic_live_reload` kills the currently displayed root scene
