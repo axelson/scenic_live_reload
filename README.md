@@ -18,9 +18,9 @@ the text to purple. Next I change the shape of the bezier line.
 
 [![Screencast Demo](./demo.gif)](https://raw.githubusercontent.com/axelson/scenic-starter-pack/master/demo.gif)
 
-Note: the code running in the demo can be found at
-[scenic-starter-pack](https://github.com/axelson/scenic-starter-pack) (which
-uses this repository)
+Note: the code running in the demo can be found at https://github.com/axelson/scenic_live_reload_demo
+
+See also: [scenic-starter-pack](https://github.com/axelson/scenic-starter-pack)
 
 # Installation
 
