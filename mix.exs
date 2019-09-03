@@ -49,8 +49,9 @@ defmodule ScenicLiveReload.MixProject do
 
   defp deps do
     [
-      {:scenic, "~> 0.10"},
-      dep(:exsync, :hex)
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      dep(:exsync, :hex),
+      {:scenic, "~> 0.10"}
     ]
   end
 
