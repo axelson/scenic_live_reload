@@ -3,14 +3,23 @@ defmodule ScenicLiveReload.MixProject do
 
   @app :scenic_live_reload
   @version "0.1.0"
+  @github_url "https://github.com/axelson/scenic_live_reload/"
 
   def project do
     [
       app: @app,
       version: @version,
+      description: description(),
+      package: package(),
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "Scenic Live Reload",
+      docs: [
+        canonical: "https://hexdocs.pm/scenic_live_reload"
+      ],
+      source_url: @github_url,
+      homepage_url: @github_url
     ]
   end
 
@@ -20,7 +29,7 @@ defmodule ScenicLiveReload.MixProject do
       files: ["lib", "mix.exs", "README*", "LICENSE*", "CHANGELOG.md"],
       maintainers: ["Jason Axelson"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/axelson/password-validator-zxcvbn"}
+      links: %{"GitHub" => @github_url}
     ]
   end
 
