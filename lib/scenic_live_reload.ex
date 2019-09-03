@@ -43,7 +43,7 @@ defmodule ScenicLiveReload do
 
       _ ->
         Logger.warn("Unable to find any scene PID's to reload")
-      nil
+        nil
     end)
   end
 end

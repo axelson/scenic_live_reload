@@ -1,6 +1,6 @@
 %{
   "elixir_make": {:hex, :elixir_make, "0.6.0", "38349f3e29aff4864352084fc736fa7fa0f2995a819a737554f7ebd28b85aaab", [:mix], [], "hexpm"},
-  "exsync": {:git, "https://github.com/axelson/exsync.git", "9cb71116845e34bc0f1e47b7bdf5ffe6c11eb07e", []},
+  "exsync": {:hex, :exsync, "0.2.4", "5cdc824553e0f4c4bf60018a9a6bbd5d3b51f93ef8401a0d8545f93127281d03", [:mix], [{:file_system, "~> 0.2", [hex: :file_system, repo: "hexpm", optional: false]}], "hexpm"},
   "file_system": {:hex, :file_system, "0.2.7", "e6f7f155970975789f26e77b8b8d8ab084c59844d8ecfaf58cbda31c494d14aa", [:mix], [], "hexpm"},
   "font_metrics": {:hex, :font_metrics, "0.3.1", "025ff9957040eb4d6430c306a4445bad5d9f43ec24448c1647df7cb63b5dd88c", [:mix], [{:msgpax, "~> 2.2", [hex: :msgpax, repo: "hexpm", optional: false]}], "hexpm"},
   "msgpax": {:hex, :msgpax, "2.2.3", "02be0be1b440a12d7e6f6c45662463d53d01a30b5bd4ab806276453b455f820a", [:mix], [{:plug, "~> 1.0", [hex: :plug, repo: "hexpm", optional: true]}], "hexpm"},

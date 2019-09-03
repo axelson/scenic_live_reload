@@ -30,7 +30,7 @@ Add `scenic_live_reload` to your list of dependencies in `mix.exs`:
 def deps do
   [
     ...
-    {:scenic_live_reload, github: "axelson/scenic_live_reload", only: :dev},
+    {:scenic_live_reload, "~> 0.1", only: :dev},
   ]
 end
 ```
@@ -43,16 +43,11 @@ case Mix.env() do
       reload_timeout: 75,
       reload_callback: {ScenicLiveReload, :reload_current_scene, []}
 
-  _ -> nil
+  _ ->
+    nil
 end
 ```
 
 # Development
 
 NOTE: This currently relies on a private scenic api to get the root scene which may change in future Scenic releases
-
-TODO:
-- [x] Write nicer description
-- [x] Request new exsync release
-- [ ] Publish to hex
-- [ ] Announce
