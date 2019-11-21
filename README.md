@@ -30,7 +30,7 @@ Add `scenic_live_reload` to your list of dependencies in `mix.exs`:
 def deps do
   [
     ...
-    {:scenic_live_reload, "~> 0.1", only: :dev},
+    {:scenic_live_reload, "~> 0.2", only: :dev},
   ]
 end
 ```
