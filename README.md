@@ -48,6 +48,19 @@ case Mix.env() do
 end
 ```
 
+Add `ScenicLiveReload` to your supervision tree, passing in your viewport configuration
+
+```
+main_viewport_config = Application.get_env(:pomodoro, :viewport)
+
+children = [
+  # other children
+  {ScenicLiveReload, viewports: [main_viewport_config]}
+]
+```
+
+Then start your application with `mix scenic.run`, edit a file with your editor, and then you should see your change reflected.
+
 # Development
 
 NOTE: This currently relies on a private scenic api to get the root scene which may change in future Scenic releases
