@@ -7,7 +7,7 @@ defmodule ScenicLiveReload do
 
   defmodule State do
     @moduledoc false
-    defstruct []
+    defstruct [:viewports]
   end
 
   def start_link(state, name \\ __MODULE__) do
@@ -15,10 +15,11 @@ defmodule ScenicLiveReload do
   end
 
   @impl GenServer
-  def init(_) do
+  def init(opts) do
     Logger.debug("SceneReloader running #{inspect(self())}")
+    viewports = Keyword.fetch!(opts, :viewports)
 
-    state = %State{}
+    state = %State{viewports: viewports}
 
     {:ok, state}
   end
@@ -29,14 +30,15 @@ defmodule ScenicLiveReload do
 
   @impl GenServer
   def handle_call(:reload_current_scene, _, state) do
+    %State{viewports: viewports} = state
     Logger.info("Reloading current scene!")
-    reload_current_scenes()
+    reload_current_scenes(viewports)
 
     {:reply, nil, state}
   end
 
-  defp reload_current_scenes do
-    ScenicLiveReload.Private.GetScenePids.scene_pids()
+  defp reload_current_scenes(viewports) do
+    ScenicLiveReload.Private.GetScenePids.scene_pids(viewports)
     |> Enum.each(fn
       {:ok, pid} ->
         Process.exit(pid, :kill)

@@ -42,7 +42,6 @@ defmodule ScenicLiveReload.MixProject do
 
   def application do
     [
-      mod: {ScenicLiveReload.Application, []},
       extra_applications: [:logger]
     ]
   end
