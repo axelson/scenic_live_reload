@@ -26,6 +26,8 @@ children = [
 ]
 ```
 
+An example of upgrading can be seen in the official demo application: https://github.com/axelson/scenic_live_reload_demo/pull/1
+
 ## [0.1.0] - 2019-09-03
 
 Initial release
