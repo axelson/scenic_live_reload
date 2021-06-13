@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.2.2] - 2021-06-13
+
+* Tested with scenic 0.10.5
+
 ## [0.2.1] - 2021-06-13
 
 * More restrictive scenic version

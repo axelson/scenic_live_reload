@@ -2,7 +2,7 @@ defmodule ScenicLiveReload.MixProject do
   use Mix.Project
 
   @app :scenic_live_reload
-  @version "0.2.1"
+  @version "0.2.2"
   @github_url "https://github.com/axelson/scenic_live_reload/"
 
   def project do
@@ -50,9 +50,7 @@ defmodule ScenicLiveReload.MixProject do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       dep(:exsync, :hex),
-      {:scenic, "~> 0.10 and <= 0.10.4"},
-      # Until https://github.com/boydm/scenic/pull/219 is released
-      {:font_metrics, "~> 0.3.0"},
+      {:scenic, "~> 0.10 and <= 0.10.5"}
     ]
   end
 
