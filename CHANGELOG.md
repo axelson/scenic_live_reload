@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.2.1] - 2021-06-13
+
+* More restrictive scenic version
+  * It is possible that ScenicLiveReload will break on the next Scenic version: https://github.com/boydm/scenic/issues/210
+
 ## [0.2.0] - 2019-11-21
 
 Breaking changes:

@@ -6,7 +6,6 @@ defmodule ScenicLiveReloadTest do
     app = :scenic_live_reload
     app_version = Application.spec(app, :vsn) |> to_string()
     readme = File.read!("README.md")
-    regex = ~r/{:#{app}, "(.+)"}/
     [_, readme_version] = Regex.run(~r/{:#{app}, "(.+)", only: :dev}/, readme)
     assert Version.match?(app_version, readme_version)
   end

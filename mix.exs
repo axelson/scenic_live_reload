@@ -2,7 +2,7 @@ defmodule ScenicLiveReload.MixProject do
   use Mix.Project
 
   @app :scenic_live_reload
-  @version "0.2.0"
+  @version "0.2.1"
   @github_url "https://github.com/axelson/scenic_live_reload/"
 
   def project do
