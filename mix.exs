@@ -52,7 +52,7 @@ defmodule ScenicLiveReload.MixProject do
       dep(:exsync, :hex),
       {:scenic, "~> 0.10"},
       # Until https://github.com/boydm/scenic/pull/219 is released
-      {:font_metrics, "~> 0.3.0"},
+      {:font_metrics, "~> 0.5.1"},
     ]
   end
 
