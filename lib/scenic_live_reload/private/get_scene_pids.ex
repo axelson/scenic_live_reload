@@ -9,9 +9,15 @@ defmodule ScenicLiveReload.Private.GetScenePids do
 
   def scene_pids(viewports) do
     Enum.map(viewports, fn config ->
-      viewport_name = config.name
-      {:ok, %{root_scene_pid: root_scene_pid}} = Scenic.ViewPort.info(viewport_name)
-      {:ok, root_scene_pid}
+      viewport_name = Keyword.get(config, :name)
+      {:ok, viewport} = Scenic.ViewPort.info(viewport_name)
+      %{scene: {scene, param}} = :sys.get_state(viewport.pid)
+      Scenic.ViewPort.set_root(viewport, scene, param)
+
+      # {:ok, %{pid: viewport_pid}} = Scenic.ViewPort.info(viewport_name)
+      # %{scene_sup: scene_sup_pid} = :sys.get_state(viewport_pid)
+      # [{_, root_scene_pid, _, _}] = DynamicSupervisor.which_children(scene_sup_pid)
+      # {:ok, root_scene_pid}
     end)
   end
 end

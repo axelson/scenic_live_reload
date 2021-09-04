@@ -38,14 +38,13 @@ defmodule ScenicLiveReload do
   end
 
   defp reload_current_scenes(viewports) do
-    ScenicLiveReload.Private.GetScenePids.scene_pids(viewports)
+    viewports
     |> Enum.each(fn
-      {:ok, pid} ->
-        Process.exit(pid, :kill)
-
-      _ ->
-        Logger.warn("Unable to find any scene PID's to reload")
-        nil
+      viewport_config ->
+        viewport_name = Keyword.get(viewport_config, :name)
+        {:ok, viewport} = Scenic.ViewPort.info(viewport_name)
+        %{scene: {scene, param}} = :sys.get_state(viewport.pid)
+        Scenic.ViewPort.set_root(viewport, scene, param)
     end)
   end
 end
