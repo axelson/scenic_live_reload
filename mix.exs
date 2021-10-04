@@ -50,7 +50,7 @@ defmodule ScenicLiveReload.MixProject do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       dep(:exsync, :hex),
-      {:scenic, "~> 0.10 and <= 0.10.5"}
+      {:scenic, github: "boydm/scenic", branch: "v0.11"}
     ]
   end
 
