@@ -36,7 +36,7 @@ defmodule ScenicLiveReload do
   end
 
   defp reload_current_scenes do
-    ScenicLiveReload.Private.GetScenePids.view_port_pids()
+    ScenicLiveReload.Private.GetViewPorts.view_port_pids()
     |> Enum.each(fn pid ->
       {:ok, view_port} = Scenic.ViewPort.info(pid)
       # WARNING: Private API
