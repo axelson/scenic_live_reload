@@ -23,6 +23,8 @@ defmodule ScenicLiveReload do
     {:ok, state}
   end
 
+  def reload_current_scene, do: reload_current_scenes()
+
   def reload_current_scenes do
     GenServer.call(__MODULE__, :reload_current_scenes)
   end

@@ -30,7 +30,7 @@ Add `scenic_live_reload` to your list of dependencies in `mix.exs`:
 def deps do
   [
     ...
-    {:scenic_live_reload, "~> 0.2", only: :dev},
+    {:scenic_live_reload, "~> 0.3", only: :dev},
   ]
 end
 ```
@@ -41,7 +41,7 @@ case Mix.env() do
   :dev ->
     config :exsync,
       reload_timeout: 150,
-      reload_callback: {ScenicLiveReload, :reload_current_scene, []}
+      reload_callback: {ScenicLiveReload, :reload_current_scenes, []}
 
   _ ->
     nil
