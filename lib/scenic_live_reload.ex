@@ -23,24 +23,23 @@ defmodule ScenicLiveReload do
     {:ok, state}
   end
 
-  def reload_current_scene do
-    GenServer.call(__MODULE__, :reload_current_scene)
+  def reload_current_scenes do
+    GenServer.call(__MODULE__, :reload_current_scenes)
   end
 
   @impl GenServer
-  def handle_call(:reload_current_scene, _, state) do
-    Logger.info("Reloading current scene!")
+  def handle_call(:reload_current_scenes, _, state) do
+    Logger.info("ScenicLiveReload reloading current scenes!")
     reload_current_scenes()
 
     {:reply, nil, state}
   end
 
-  defp reload_current_scenes do
-    ScenicLiveReload.Private.GetViewPorts.view_port_pids()
+  def reload_current_scenes do
+    ScenicLiveReload.Private.FetchScenicInfo.view_port_pids()
     |> Enum.each(fn pid ->
       {:ok, view_port} = Scenic.ViewPort.info(pid)
-      # WARNING: Private API
-      %{scene: {scene, param}} = :sys.get_state(view_port.pid)
+      {scene, params} = ScenicLiveReload.Private.FetchScenicInfo.get_current_scene(view_port)
       Scenic.ViewPort.set_root(view_port, scene, param)
     end)
   end
