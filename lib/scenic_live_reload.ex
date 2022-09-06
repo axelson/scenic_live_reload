@@ -2,8 +2,8 @@ defmodule ScenicLiveReload do
   @moduledoc """
   A simple, generic code reloader for Scenic Scenes
   """
-  require Logger
   use GenServer
+  require Logger
 
   defmodule State do
     @moduledoc false
