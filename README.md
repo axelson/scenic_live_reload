@@ -5,7 +5,7 @@ root scene will be killed, when it is restarted it will use any new code
 currently in the running beam instance.
 
 How it works:
-* Uses [exsync](https://github.com/axelson/exsync) to watch the file system 
+* Uses [exsync](https://github.com/axelson/exsync) to watch the file system
 * When you edit a file with your editor, exsync recompiles and reloads that beam file
 * `exsync` notifies `scenic_live_reload` that files were reloaded
 * `scenic_live_reload` kills the currently displayed root scene
@@ -40,7 +40,7 @@ Add this configuration to your `config.exs`:
 case Mix.env() do
   :dev ->
     config :exsync,
-      reload_timeout: 75,
+      reload_timeout: 150,
       reload_callback: {ScenicLiveReload, :reload_current_scene, []}
 
   _ ->
@@ -48,18 +48,7 @@ case Mix.env() do
 end
 ```
 
-Add `ScenicLiveReload` to your supervision tree, passing in your viewport configuration
-
-```
-main_viewport_config = Application.get_env(:pomodoro, :viewport)
-
-children = [
-  # other children
-  {ScenicLiveReload, viewports: [main_viewport_config]}
-]
-```
-
-Then start your application with `mix scenic.run`, edit a file with your editor, and then you should see your change reflected.
+Then start your application with `mix scenic.run` (or `iex -S mix`), edit a file with your editor, and then you should see your change reflected.
 
 # Development
 

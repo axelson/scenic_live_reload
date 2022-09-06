@@ -42,15 +42,17 @@ defmodule ScenicLiveReload.MixProject do
 
   def application do
     [
+      mod: {ScenicLiveReloadApplication, []},
       extra_applications: [:logger]
     ]
   end
 
   defp deps do
     [
+      {:credo, "~> 1.6"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       dep(:exsync, :hex),
-      {:scenic, "~> 0.10 and <= 0.10.5"}
+      {:scenic, "~> 0.11.0-beta.0"}
     ]
   end
 
