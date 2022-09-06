@@ -13,9 +13,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 * Updated to work with Scenic 0.11
 
-Breaking change:
+Breaking changes:
 * ScenicLiveReload no longer needs to be added to the list of children in your application
   * Remove ScenicLiveReload from the list of children in your application
+* Change the configuration to:
+
+```elixir
+case Mix.env() do
+  :dev ->
+    config :exsync,
+      reload_timeout: 150,
+      reload_callback: {ScenicLiveReload, :reload_current_scenes, []}
+
+  _ ->
+    nil
+end
+```
 
 ## [0.2.2] - 2021-06-13
 
