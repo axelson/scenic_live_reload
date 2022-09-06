@@ -30,17 +30,17 @@ defmodule ScenicLiveReload do
   @impl GenServer
   def handle_call(:reload_current_scenes, _, state) do
     Logger.info("ScenicLiveReload reloading current scenes!")
-    reload_current_scenes()
+    do_reload_current_scenes()
 
     {:reply, nil, state}
   end
 
-  def reload_current_scenes do
+  def do_reload_current_scenes do
     ScenicLiveReload.Private.FetchScenicInfo.view_port_pids()
     |> Enum.each(fn pid ->
       {:ok, view_port} = Scenic.ViewPort.info(pid)
       {scene, params} = ScenicLiveReload.Private.FetchScenicInfo.get_current_scene(view_port)
-      Scenic.ViewPort.set_root(view_port, scene, param)
+      Scenic.ViewPort.set_root(view_port, scene, params)
     end)
   end
 end

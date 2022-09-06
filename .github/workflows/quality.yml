@@ -28,6 +28,8 @@ jobs:
           elixir-version: ${{matrix.elixir}}
 
       - run: mix deps.get
+      - run: mix deps.compile
+      - run: mix compile --warnings-as-errors
       - run: mix format --check-formatted
       - run: mix credo
 

@@ -49,10 +49,10 @@ defmodule ScenicLiveReload.MixProject do
 
   defp deps do
     [
-      {:credo, "~> 1.6"},
+      {:credo, "~> 1.6", only: :dev},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       dep(:exsync, :hex),
-      {:scenic, "~> 0.11.0-beta.0"}
+      {:scenic, "~> 0.11"}
     ]
   end
 
