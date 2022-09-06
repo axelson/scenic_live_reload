@@ -2,7 +2,7 @@ defmodule ScenicLiveReload.MixProject do
   use Mix.Project
 
   @app :scenic_live_reload
-  @version "0.2.2"
+  @version "0.3.0"
   @github_url "https://github.com/axelson/scenic_live_reload/"
 
   def project do
@@ -28,7 +28,7 @@ defmodule ScenicLiveReload.MixProject do
       name: @app,
       files: ["lib", "mix.exs", "README*", "LICENSE*", "CHANGELOG.md"],
       maintainers: ["Jason Axelson"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{"GitHub" => @github_url}
     ]
   end
