@@ -36,7 +36,7 @@ end
 ```
 
 Add this configuration to your `config.exs`:
-```
+```elixir
 case Mix.env() do
   :dev ->
     config :exsync,
