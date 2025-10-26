@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.3.2] - 2025-10-25
+
+* Fix compilation warning and test with Elixir 1.19 and Erlang/OTP 28
+
 ## [0.3.1] - 2022-09-05
 
 * Allow both `reload_current_scene` and `reload_current_scenes`
